@@ -2,6 +2,6 @@
 #define _HOLBERTON_H_
 
 int _printf(const char *format, ...);
-char* itoa(int i, char b[])
+char* itoa(int i, char b[]);
 
 #endif
