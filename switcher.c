@@ -5,7 +5,6 @@
  * @format: values
  * Return: Int
  */
-
 int switcher(va_list arg, const char *format)
 {
 	int i = 0, m = 0;
@@ -30,6 +29,11 @@ int switcher(va_list arg, const char *format)
 			break;
 		case '\0':
 			m = -2;
+			break;
+		case 'd':
+		case 'i':
+			m += printnum(arg);
+			m--, i++;
 			break;
 		default:
 			_putchar('%');
