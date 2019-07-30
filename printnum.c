@@ -4,26 +4,31 @@
 
 /**
  * printnum - Print numbers integer
- * @arg: argument
+ * @n: argument
+ *
  *
  * Return: int
  */
 
-int printnum(va_list arg)
+int printnum(int n)
 
 {
-	int n = 0;
-
-	n = va_arg(arg, int);
+	int count = 0;
+	unsigned int num;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		num = -n;
+		count++;
+		count++;
 	}
-	if (n / 10)
-		printnum(arg);
-	_putchar(n % 10 + '0');
-
-	return (n);
+	else
+	{
+		num = n;
+	}
+	if (num / 10)
+		count += printnum(num / 10) + 1;
+	_putchar(num % 10 + '0');
+	return (count);
 }
