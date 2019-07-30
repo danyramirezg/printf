@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
- * switcher - function for check different cases
- * @arg: argument of the fuctions
+ * switcher - Function for check different cases
+ * @arg: Argument of the fuctions
  * @format: values
- * Return - int
+ * Return: Int
  */
 int switcher(va_list arg, const char *format)
 {
