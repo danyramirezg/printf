@@ -5,10 +5,10 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+int printnum(int n);
 int switcher(va_list arg, const char *format);
 int printstrlen(va_list arg);
 int _putchar(char c);
 int _printf(const char *format, ...);
-char* itoa(int i, char b[]);
 
 #endif
