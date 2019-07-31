@@ -7,7 +7,7 @@
  */
 int switcher(va_list arg, const char *format)
 {
-	int i = 0, m = 0, n = 0;
+	int i = 0, m = 0;
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -28,11 +28,10 @@ int switcher(va_list arg, const char *format)
 			i++;
 			break;
 		case '\0':
-			m = -2;
+			m = -1;
 			break;
 		case 'd':
 		case 'i':
-			n = va_arg(arg, int);
 			m += printnum(arg);
 			m--, i++;
 			break;
