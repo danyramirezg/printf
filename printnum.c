@@ -10,25 +10,32 @@
  * Return: int
  */
 
-int printnum(int n)
-
+int printnum(va_list arg)
 {
-	int count = 0;
-	unsigned int num;
+	int num, i = 1, count = 0;
+	unsigned int n;
+	char c;
 
-	if (n < 0)
+	num = va_arg(arg, int);
+
+	if (num < 0)
 	{
-		_putchar('-');
-		num = -n;
-		count++;
-		count++;
+		c = '-';
+		count = count + write(1, &c, 1);
+		n = -num;
 	}
 	else
+		n = num;
+
+	while (n / i > 9)
+		i *= 10;
+
+	while (i != 0)
 	{
-		num = n;
+		c = n / i + '0';
+		count = count + write(1, &c, 1);
+		n = n % i;
+		i = i / 10;
 	}
-	if (num / 10)
-		count += printnum(num / 10) + 1;
-	_putchar(num % 10 + '0');
 	return (count);
 }
