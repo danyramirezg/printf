@@ -33,7 +33,7 @@ int switcher(va_list arg, const char *format)
 		case 'd':
 		case 'i':
 			n = va_arg(arg, int);
-			m += printnum(n);
+			m += printnum(arg);
 			m--, i++;
 			break;
 		default:
