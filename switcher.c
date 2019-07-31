@@ -28,7 +28,7 @@ int switcher(va_list arg, const char *format)
 			i++;
 			break;
 		case '\0':
-			m = -1;
+			m = -2;
 			break;
 		case 'd':
 		case 'i':
