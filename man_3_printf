@@ -1,0 +1,46 @@
+.TH man 1 "30 jul 2019" "0.01" "_printf man page"
+.SH NAME
+.B _printf
+- Output according to a format.
+.SH SYNOPSIS
+.B #include "holberton.h"
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf function writes output from a list, according to the format.
+.SH THE CONVERSION SPECIFIER
+.TP
+Specifies the type of conversion to be applied. Below there are the specifiers:
+.TP
+%c	The argument is converted to a char and is printed.
+.TP
+%s	Array of characters are printing, creating an string.
+.TP
+%i, %d 	The argument prints an interger.
+.SH RETURN VALUE
+These functions return the number of characters printed (excluding the null byte used to end output to strings). If an output error is encountered, a negative value is returned.
+.SH EXAMPLE
+.PP
+.RS
+.BR " #include "holberton.h""
+.br
+.BR " int main(void)"
+.br
+.BR " {"
+.br
+.BR " 	int number = 50;"
+.br
+.BR " 	_printf("%d", number); "
+.br
+.BR "	_printf("%C", 'H'); "
+.br
+.BR "	_printf("%S", "Welcome to the manual"); "
+.PP
+The example above prints a number, a character and a string.
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Daniela Ramirez Gomez 
+<https://github.com/danyramirezg>
+
+Pablo Andrés Sánchez Monsalve
+<https://github.com/Jackeado>
